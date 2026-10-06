@@ -11,26 +11,12 @@
 
   // ---------- State & persistence ----------
 
-  function seedRoutines() {
-    const routine = (name, items) => ({
-      id: L.uid(),
-      name,
-      exercises: items.map(([exerciseId, sets, reps]) => ({ exerciseId, sets, reps })),
-    });
-    return [
-      routine('Push', [['bench-press', 4, 8], ['overhead-press', 3, 8], ['incline-db-press', 3, 10], ['lateral-raise', 3, 15], ['triceps-pushdown', 3, 12]]),
-      routine('Pull', [['deadlift', 3, 5], ['pull-up', 3, 8], ['barbell-row', 3, 8], ['face-pull', 3, 15], ['db-curl', 3, 12]]),
-      routine('Legs', [['back-squat', 4, 6], ['romanian-deadlift', 3, 8], ['leg-press', 3, 12], ['leg-curl', 3, 12], ['standing-calf-raise', 4, 15]]),
-      routine('Full Body', [['back-squat', 3, 8], ['bench-press', 3, 8], ['barbell-row', 3, 8], ['hanging-leg-raise', 3, 12]]),
-    ];
-  }
-
   function defaultState() {
     return {
       version: 1,
       settings: { name: '', unit: 'lb', restSeconds: 90 },
       customExercises: [],
-      routines: seedRoutines(),
+      routines: [],
       workouts: [],
       bodyweight: [],
       active: null,
@@ -206,7 +192,7 @@
             <span>${esc(x.name)}${x.custom ? ' <em class="tag">custom</em>' : ''}</span>
             <small>${esc(x.muscle)} · ${esc(x.equipment)}</small>
           </button>`).join('')
-        : `<p class="muted center">No matches. Create it as a custom exercise below.</p>`;
+        : `<p class="muted center">${allExercises().length ? 'No matches.' : 'No exercises yet.'} Create it as a custom exercise below.</p>`;
     }
 
     search.addEventListener('input', draw);

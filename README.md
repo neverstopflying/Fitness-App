@@ -6,12 +6,12 @@ A fast, offline-first workout tracker built as an installable web app. It runs o
 
 - **Workout logging**: log weight × reps per set and tap ✓ to complete it. Each set shows what you did last time, and tapping that "Previous" value copies it in.
 - **Rest timer**: starts on its own when you finish a set, with ±15s and skip, and it vibrates and beeps when time is up.
-- **Routines**: reusable templates (Push / Pull / Legs / Full Body included). Starting one pre-fills weights from your last session.
+- **Routines**: reusable templates you build yourself. Starting one pre-fills weights from your last session.
 - **Personal records**: on finishing a workout, FlyFit flags a new heaviest weight, best estimated 1RM (Epley), or most reps for bodyweight moves.
 - **History**: every workout with duration, volume and sets. You can repeat a workout or save it as a routine.
 - **Progress charts**: est. 1RM, top weight, volume and best reps per exercise, plus a body-weight log and trend.
 - **Home dashboard**: workouts and volume this week, plus your weekly streak.
-- **65 built-in exercises**, plus your own custom ones.
+- **Exercise library**: empty for now (to be filled from your training program in `js/exercises.js`). You can add custom exercises in the app at any time.
 - lb / kg (switch any time; data is stored in kg internally), and dark and light themes.
 - **Backup**: export and import a JSON file, for safekeeping or moving to a new phone.
 
